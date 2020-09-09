@@ -1,0 +1,70 @@
+
+syntax = "proto3";
+package gcp;
+
+option java_package = "com.imageowrks.spcue.grpc.gcp";
+option java_multiple_files = true;
+
+//Interface for managing GCP resources
+
+// ------- Services ------]
+
+service GcpInterface {
+
+    // Get a list of available zones
+    rpc getZoneList(getZoneListRequest) returns (getZoneListResponse);
+
+    // Get a list of available InstanceTemplates
+	rpc getInstanceTemplateList(getInstanceTemplateListRequest) returns (getInstanceTemplateListResponse);
+
+	// Create Managed Instance Group
+	rpc CreateManagedInstanceGroup(CreateManagedInstanceGroupRequest) returns (CreateManagedInstanceGroupResponse);
+	
+	// Delete Managed Instance Group
+	rpc DeleteManagedInstanceGroup(DeleteManagedInstanceGroupRequest) returns (DeleteManagedInstanceGroupResponse);
+
+
+}
+
+// -------- Primary Message Types --------]
+
+message GcpClient {
+	string project = 1;
+	bool default_credentials = 2;
+	
+}
+
+// -------- Requests & Responses --------]
+
+// SERVICE ----
+
+message getZoneListRequest {
+    GcpClient client = 1;
+}
+
+message getZoneListResponse {
+    repeated string zone = 1;
+}
+
+message getInstanceTemplateListRequest {
+    GcpClient client = 1;
+}
+
+message getInstanceTemplateListResponse {
+    repeated string template = 1;
+}
+
+message CreateManagedInstanceGroupRequest {
+	string instance_template = 1;
+	string zone = 2;
+	int32 number_of_instances = 3;
+}
+message CreateManagedInstanceGroupResponse {
+	
+}
+message DeleteManagedInstanceGroupRequest {
+
+}
+message DeleteManagedInstanceGroupResponse{
+
+}

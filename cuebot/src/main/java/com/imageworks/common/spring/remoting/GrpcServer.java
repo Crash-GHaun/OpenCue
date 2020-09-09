@@ -21,6 +21,7 @@ import com.imageworks.spcue.servant.ManageDepend;
 import com.imageworks.spcue.servant.ManageFacility;
 import com.imageworks.spcue.servant.ManageFilter;
 import com.imageworks.spcue.servant.ManageFrame;
+import com.imageworks.spcue.servant.ManageGCP;
 import com.imageworks.spcue.servant.ManageGroup;
 import com.imageworks.spcue.servant.ManageHost;
 import com.imageworks.spcue.servant.ManageJob;
@@ -84,6 +85,7 @@ public class GrpcServer implements ApplicationContextAware {
                 .addService(applicationContext.getBean("manageFacility", ManageFacility.class))
                 .addService(applicationContext.getBean("manageFilter", ManageFilter.class))
                 .addService(applicationContext.getBean("manageFrame", ManageFrame.class))
+                .addService(applicationContext.getBean("manageGCP", ManageGCP.class))
                 .addService(applicationContext.getBean("manageGroup", ManageGroup.class))
                 .addService(applicationContext.getBean("manageHost", ManageHost.class))
                 .addService(applicationContext.getBean("manageJob", ManageJob.class))
