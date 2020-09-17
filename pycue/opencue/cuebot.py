@@ -38,6 +38,8 @@ from opencue.compiled_proto import facility_pb2
 from opencue.compiled_proto import facility_pb2_grpc
 from opencue.compiled_proto import filter_pb2
 from opencue.compiled_proto import filter_pb2_grpc
+from opencue.compiled_proto import gcp_pb2
+from opencue.compiled_proto import gcp_pb2_grpc
 from opencue.compiled_proto import host_pb2
 from opencue.compiled_proto import host_pb2_grpc
 from opencue.compiled_proto import job_pb2
@@ -100,6 +102,7 @@ class Cuebot(object):
         'facility': facility_pb2,
         'filter': filter_pb2,
         'frame': job_pb2,
+        'gcp': gcp_pb2,
         'group': job_pb2,
         'host': host_pb2,
         'job': job_pb2,
@@ -125,6 +128,7 @@ class Cuebot(object):
         'facility': facility_pb2_grpc.FacilityInterfaceStub,
         'filter': filter_pb2_grpc.FilterInterfaceStub,
         'frame': job_pb2_grpc.FrameInterfaceStub,
+        'gcp': gcp_pb2_grpc.GcpInterfaceStub,
         'group': job_pb2_grpc.GroupInterfaceStub,
         'host': host_pb2_grpc.HostInterfaceStub,
         'job': job_pb2_grpc.JobInterfaceStub,
