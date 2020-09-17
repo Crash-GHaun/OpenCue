@@ -98,15 +98,16 @@
         <property name="manageQueue" ref="manageQueue" />
     </bean>
 
-    <bean scope="prototype" id="manageHost" class="com.imageworks.spcue.servant.ManageHost">
-        <property name="hostManager" ref="hostManager" />
-        <property name="hostDao" ref="hostDao" />
-        <property name="adminManager" ref="adminManager" />
-        <property name="commentManager" ref="commentManager" />
-        <property name="redirectManager" ref="redirectManager" />
-        <property name="jobManager" ref="jobManager" />
-        <property name="whiteboard" ref="whiteboard" />
-        <property name="hostSearchFactory" ref="hostSearchFactory" />
+    <bean scope="prototype" id="manageHost"
+    	class="com.imageworks.spcue.servant.ManageHost">
+    	<property name="hostManager" ref="hostManager" />
+    	<property name="hostDao" ref="hostDao" />
+    	<property name="adminManager" ref="adminManager" />
+    	<property name="commentManager" ref="commentManager" />
+    	<property name="redirectManager" ref="redirectManager" />
+    	<property name="jobManager" ref="jobManager" />
+    	<property name="whiteboard" ref="whiteboard" />
+    	<property name="hostSearchFactory" ref="hostSearchFactory" />
     </bean>
 
     <bean scope="prototype" id="manageJob" class="com.imageworks.spcue.servant.ManageJob">
@@ -197,5 +198,6 @@
         <property name="frameCompleteHandler" ref="frameCompleteHandler" />
         <property name="hostReportHandler" ref="hostReportHandler" />
     </bean>
+    <bean scope="prototype" id="manageGCP" class="com.imageworks.spcue.servant.ManageGCP"></bean>
 
 </beans>
